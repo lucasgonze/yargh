@@ -1,0 +1,24 @@
+{
+  "name": "yargh",
+  "version": "0.0.1",
+  "description": "Merge stdin with a template command, executing each resulting line. Similar to xargs.",
+  "main": "yargh.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasgonze/yargh.git"
+  },
+  "author": "Lucas Gonze",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucasgonze/yargh/issues"
+  },
+  "homepage": "https://github.com/lucasgonze/yargh#readme",
+  { "dependencies" :
+    { "commander" : ">=1.0.0"
+    }
+  }
+
+}
