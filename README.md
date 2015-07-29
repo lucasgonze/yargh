@@ -2,20 +2,75 @@
 
 Given a series of lines on stdin, massages each one and executes the result as a command.
 
-In one case, each line is split on a separator and the command includes portions of it.
+Usage: ````data-lines | yargh separator command-template````
 
+Inputs:
+1. A newline-separated data file on stdin
+2. A separator for parsing the data lines
+3. A command template to merge parsed data into, and then run
+
+For example this...
 ````
-$ echo "-rw-r--r--  1 lucasgonze  staff   425 Jul 21 22:36 README.md
--rw-r--r--  1 lucasgonze  staff   592 Jul 20 22:01 package.json
--rwxr-xr-x  1 lucasgonze  staff  1289 Jul 21 22:39 yargh.js
-" | yargh --separator "\s" "echo $2" -
+echo "Hello," | yargh , "echo %1 World"
+````
+...turns into this:
+````
+$ echo Hello World
 ````
 
-In the other case, each line is split with a regular expression and the command includes matched components.
+And this...
+````
+$ echo "a,b
+c,d" | yargh "," "echo %2"
+````
+turns into these:
+````
+$ echo b
+$ echo d
+````
 
+In the command template:
+1. Fields of the parsed string are addressed as variables in the form %1 (where the number is any field).
+2. %0 is replaced with the entire input line, unparsed.
+
+The separator argument is optional. If there is only one argument, it is treated as the command-template. In this case %0 is the only field available. If %0 is present in the command template, it is appended.
+
+So this:
 ````
-$ echo "-rw-r--r--  1 lucasgonze  staff   425 Jul 21 22:36 README.md
--rw-r--r--  1 lucasgonze  staff   592 Jul 20 22:01 package.json
--rwxr-xr-x  1 lucasgonze  staff  1289 Jul 21 22:39 yargh.js
-" | yargh --regex '([a-z])' "echo $1" -
+echo example.png | yargh "file %0"
 ````
+
+turns into this:
+````
+file example.png
+````
+
+And this:
+````
+echo example.png | yargh file
+````
+Becomes this:
+````
+file example.png
+````
+
+
+---
+
+See also:
+* xargs
+* Gnu Parallel.
+
+---
+
+New names under consideration:
+* Y
+* aye
+* Y_Y
+* QQ
+* YYY
+* yyy
+* separator
+* sep
+* Yz
+* yz
