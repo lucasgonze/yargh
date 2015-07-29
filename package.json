@@ -1,8 +1,8 @@
 {
   "name": "yargh",
-  "version": "0.0.1",
-  "description": "Merge stdin with a template command, executing each resulting line. Similar to xargs.",
-  "main": "yargh.js",
+  "version": "0.0.2",
+  "description": "command line processor",
+  "main": "^_^.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,9 +16,7 @@
     "url": "https://github.com/lucasgonze/yargh/issues"
   },
   "homepage": "https://github.com/lucasgonze/yargh#readme",
-  { "dependencies" :
-    { "commander" : ">=1.0.0"
-    }
+  "dependencies": {
+    "commander": "^2.8.1"
   }
-
 }
