@@ -54,6 +54,27 @@ Becomes this:
 file example.png
 ````
 
+## Recipe Book
+
+The separator can be a regular expression.
+
+These standard regular expressions may be useful to you:
+
+* output of "ls -l": use ''''/\s+/''''.
+
+## Future
+
+Ability to recognize standardized command outputs. Recognize a command from history and intelligently match it to a pattern.
+
+Ability to skip header, aka first line. --header.
+
+
+
+### Predefined separators
+* Whitespace: \s+. Useful for "ls -l" and many others. Use -p whitespace for separator.
+* CSV.
+
+
 
 ---
 
