@@ -54,7 +54,6 @@ rl.on('line', function(line){
     var arr = line.split(regex);
     for( var i=0; i<arr.length; i++){
       newStr = newStr.replace("%"+i,arr[i]);
-//    console.log(i,newStr,arr[i]);
     }
 
     exec(newStr, puts);

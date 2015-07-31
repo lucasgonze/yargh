@@ -35,7 +35,7 @@ In the command template:
 
 ---
 
-The separator argument is optional. If there is only one argument, it is treated as the command-template. In this case %0 is the only field available. 
+The separator argument is optional. If there is only one argument, it is treated as the command-template. In this case %0 is the only field available.
 
 So this:
 ````
@@ -60,27 +60,15 @@ Spawns this command:
 file example.png
 ````
 
-## Recipe Book
-
-The separator can be a regular expression.
-
-These standard regular expressions may be useful to you:
-
-* output of "ls -l": use ''''/\s+/''''.
-
 ## Future
 
 Ability to recognize standardized command outputs. Recognize a command from history and intelligently match it to a pattern.
 
 Ability to skip header, aka first line. --header.
 
+Predefined separator for whitespace. \s+. Useful for "ls -l" and many others. Use --whitespace or -w; for separator.
 
-
-### Predefined separators
-* Whitespace: \s+. Useful for "ls -l" and many others. Use -p whitespace for separator.
-* CSV.
-
-
+Predefined CSV parsing per rfc4180
 
 ---
 
